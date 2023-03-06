@@ -9,7 +9,7 @@ const FETCH_TERMS = gql`
   query ($params: TermsParams) {
     terms(params: $params) {
       metaData {
-        totalItemCount
+        totalPageCount
       }
       items {
         id

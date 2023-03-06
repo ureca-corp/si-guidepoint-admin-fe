@@ -16,7 +16,7 @@ export const TermsView = () => {
     data?.terms.items ?? []
   );
 
-  const totalCount = data?.terms.metaData.totalItemCount ?? 0;
+  const totalCount = data?.terms.metaData.totalPageCount ?? 0;
 
   return (
     <ListLayoutTemplate
