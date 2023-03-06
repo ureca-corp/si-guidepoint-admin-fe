@@ -11,10 +11,10 @@ const nextConfig = {
   env: {
     gqlServer: "https://guidepoint-api.ureca.im/graphql",
   },
-  // images: {
-  //   unoptimized: true,
-  // },
-  // assetPrefix: ".",
+  images: {
+    unoptimized: true,
+  },
+  assetPrefix: ".",
 };
 
 module.exports = nextConfig;
