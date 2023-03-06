@@ -42,15 +42,15 @@ export const useLoginView = () => {
     },
   });
   const handleLoginSuccess = useCallback(() => {
-    () => {
-      if (data) {
-        const { accessToken } = data.adminLogin;
-        setUser({ accessToken });
+    if (data) {
+      const { accessToken } = data.adminLogin;
+      setUser({ accessToken });
 
-        routeHome();
-      }
-    };
+      routeHome();
+    }
   }, [data]);
+
+  console.log(data);
 
   const onSubmit = () => requestLogin({ variables: { email, password: pw } });
 
