@@ -1,7 +1,6 @@
+import { css } from "@emotion/react";
 import { Button, Typography } from "@mui/material";
 import { ReactNode } from "react";
-import { css } from "@emotion/react";
-import { LightColor } from "@/common/theme/colors";
 
 type PopupMenuItemButtonProps = {
   onClick?: () => void;

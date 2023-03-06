@@ -50,8 +50,6 @@ export const useLoginView = () => {
     }
   }, [data]);
 
-  console.log(data);
-
   const onSubmit = () => requestLogin({ variables: { email, password: pw } });
 
   useEffect(() => {

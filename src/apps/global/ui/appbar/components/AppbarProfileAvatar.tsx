@@ -1,3 +1,4 @@
+import { PopupMenuLogoutButton } from "@/apps/auth/logout";
 import {
   useMemberEmail,
   useMemberProfileImage,
@@ -37,7 +38,7 @@ export const AppbarProfileAvatar = () => {
           <AvatarWithEmail email={email} profileImageUrl={profileImageUrl} />
         </div>
         <PopupMenuItemButton>{"계정 설정"}</PopupMenuItemButton>
-        <PopupMenuItemButton>{"로그아웃"}</PopupMenuItemButton>
+        <PopupMenuLogoutButton />
       </PopupMenu>
     </div>
   );
