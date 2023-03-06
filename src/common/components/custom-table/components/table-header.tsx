@@ -30,5 +30,7 @@ const st = {
 
     padding: 12px 16px;
     background-color: ${BlueGreyColors.Shade50};
+
+    white-space: nowrap;
   `,
 };

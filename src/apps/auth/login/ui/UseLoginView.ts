@@ -43,8 +43,8 @@ export const useLoginView = () => {
   });
   const handleLoginSuccess = useCallback(() => {
     if (data) {
-      const { accessToken } = data.adminLogin;
-      setUser({ accessToken });
+      const { user, accessToken } = data.adminLogin;
+      setUser({ userId: user.userId, email: user.email, accessToken });
 
       routeHome();
     }

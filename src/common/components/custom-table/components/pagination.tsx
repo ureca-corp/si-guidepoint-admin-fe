@@ -1,10 +1,10 @@
 import { css } from "@emotion/react";
-import { Pagination } from "@mui/material";
+import { Pagination, PaginationProps } from "@mui/material";
 
-export const CustomTablePagination = () => {
+export const CustomTablePagination = (p: PaginationProps) => {
   return (
     <div css={st.root}>
-      <Pagination color={"primary"} shape={"rounded"} />
+      <Pagination color={"primary"} shape={"rounded"} {...p} />
     </div>
   );
 };

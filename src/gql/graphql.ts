@@ -80,12 +80,12 @@ export type CreateMemberInput = {
 };
 
 export type CreateProfileInput = {
-  assistantContactInfos: Array<InputMaybe<AssistantContactInfoInput>>;
+  assistantContactInfos: Array<AssistantContactInfoInput>;
   contactInfo: ContactInfoInput;
   employmentHistory: EmploymentHistoryInput;
   expertiseHistory: ExpertiseHistoryInput;
   misc: MiscInput;
-  participations: Array<InputMaybe<Participation>>;
+  participations: Array<Participation>;
   personalInfo: PersonalInfoInput;
   residenceAddress: ResidenceAddressInput;
 };
@@ -104,7 +104,7 @@ export type EmploymentHistory = {
 };
 
 export type EmploymentHistoryInput = {
-  items: Array<InputMaybe<EmploymentHistoryItemInput>>;
+  items: Array<EmploymentHistoryItemInput>;
   yearsOfExperience: YearsOfExperience;
 };
 
@@ -129,13 +129,13 @@ export type EmploymentHistoryItemInput = {
 
 export type ExpertiseHistory = {
   __typename?: 'ExpertiseHistory';
-  areaList: Array<Maybe<AreaOfExpertise>>;
+  areaList: Array<AreaOfExpertise>;
   id: Scalars['Int'];
   keywords: KeywordsOfExpertise;
 };
 
 export type ExpertiseHistoryInput = {
-  areaList: Array<InputMaybe<AreaOfExpertiseInput>>;
+  areaList: Array<AreaOfExpertiseInput>;
   keywords: KeywordsOfExpertiseInput;
 };
 
@@ -160,19 +160,19 @@ export enum InstanceMessengerType {
 
 export type KeywordsOfExpertise = {
   __typename?: 'KeywordsOfExpertise';
-  boardCertifications: Array<Maybe<Scalars['String']>>;
-  companyExperience: Array<Maybe<Scalars['String']>>;
-  drugsAndTechnology: Array<Maybe<Scalars['String']>>;
-  productExperience: Array<Maybe<Scalars['String']>>;
-  researchInterests: Array<Maybe<Scalars['String']>>;
+  boardCertifications: Array<Scalars['String']>;
+  companyExperience: Array<Scalars['String']>;
+  drugsAndTechnology: Array<Scalars['String']>;
+  productExperience: Array<Scalars['String']>;
+  researchInterests: Array<Scalars['String']>;
 };
 
 export type KeywordsOfExpertiseInput = {
-  boardCertifications: Array<InputMaybe<Scalars['String']>>;
-  companyExperience: Array<InputMaybe<Scalars['String']>>;
-  drugsAndTechnology: Array<InputMaybe<Scalars['String']>>;
-  productExperience: Array<InputMaybe<Scalars['String']>>;
-  researchInterests: Array<InputMaybe<Scalars['String']>>;
+  boardCertifications: Array<Scalars['String']>;
+  companyExperience: Array<Scalars['String']>;
+  drugsAndTechnology: Array<Scalars['String']>;
+  productExperience: Array<Scalars['String']>;
+  researchInterests: Array<Scalars['String']>;
 };
 
 export type LoginInput = {
@@ -198,7 +198,7 @@ export type Misc = {
   complianceConflicts: Scalars['String'];
   linkedInProfileLink: Scalars['String'];
   resumeLink: Scalars['String'];
-  socialMediaProfiles?: Maybe<Array<Maybe<SocialMediaProfile>>>;
+  socialMediaProfiles?: Maybe<Array<SocialMediaProfile>>;
 };
 
 export type MiscInput = {
@@ -206,7 +206,7 @@ export type MiscInput = {
   complianceConflicts: Scalars['String'];
   linkedInProfileLink: Scalars['String'];
   resumeLink: Scalars['String'];
-  socialMediaProfiles: Array<InputMaybe<SocialMediaProfileInput>>;
+  socialMediaProfiles: Array<SocialMediaProfileInput>;
 };
 
 export type Mutation = {
@@ -368,13 +368,13 @@ export enum Prefix {
 
 export type Profile = {
   __typename?: 'Profile';
-  assistantContactInfos?: Maybe<Array<Maybe<AssistantContactInfo>>>;
+  assistantContactInfos?: Maybe<Array<AssistantContactInfo>>;
   contactInfo: ContactInfo;
   employmentHistory: EmploymentHistory;
   expertiseHistory: ExpertiseHistory;
   id: Scalars['Int'];
   misc: Misc;
-  participations?: Maybe<Array<Maybe<Participation>>>;
+  participations?: Maybe<Array<Participation>>;
   personalInfo: PersonalInfo;
   residenceAddress: ResidenceAddress;
 };
@@ -385,7 +385,7 @@ export type ProfileParams = {
 
 export type Profiles = {
   __typename?: 'Profiles';
-  items: Array<Maybe<Profile>>;
+  items: Array<Profile>;
   metaData: PageMetaData;
 };
 
@@ -393,11 +393,11 @@ export type Query = {
   __typename?: 'Query';
   admin?: Maybe<Admin>;
   adminLogin: LoginResponse;
-  admins: Array<Maybe<Admin>>;
+  admins: Array<Admin>;
   login: LoginResponse;
   memberForAdmin: Member;
   memberOwn: Member;
-  membersForAdmin: Array<Maybe<Member>>;
+  membersForAdmin: Array<Member>;
   profileForAdmin: Profile;
   profileOwn: Profile;
   profilesForAdmin: Profiles;
@@ -505,7 +505,7 @@ export type Term = {
 
 export type Terms = {
   __typename?: 'Terms';
-  items: Array<Maybe<Term>>;
+  items: Array<Term>;
   metaData: PageMetaData;
 };
 
@@ -524,12 +524,12 @@ export type UpdateMemberOwnPasswordInput = {
 };
 
 export type UpdateProfileInput = {
-  assistantContactInfos?: InputMaybe<Array<InputMaybe<AssistantContactInfoInput>>>;
+  assistantContactInfos?: InputMaybe<Array<AssistantContactInfoInput>>;
   contactInfo?: InputMaybe<ContactInfoInput>;
   employmentHistory?: InputMaybe<EmploymentHistoryInput>;
   expertiseHistory?: InputMaybe<ExpertiseHistoryInput>;
   misc?: InputMaybe<MiscInput>;
-  participations?: InputMaybe<Array<InputMaybe<Participation>>>;
+  participations?: InputMaybe<Array<Participation>>;
   personalInfo?: InputMaybe<PersonalInfoInput>;
   residenceAddress?: InputMaybe<ResidenceAddressInput>;
 };

@@ -1,3 +1,5 @@
+import { RouterPath } from "../router";
+
 export class SidebarMenuEntity {
   constructor(
     public id: number,
@@ -9,8 +11,9 @@ export class SidebarMenuEntity {
 export class SidebarMenuItemEntity {
   constructor(
     public id: number,
-    public iconName: string,
     public name: string,
-    public depth: number
+    public link: RouterPath,
+    public iconName: string,
+    public depth: number,
   ) {}
 }

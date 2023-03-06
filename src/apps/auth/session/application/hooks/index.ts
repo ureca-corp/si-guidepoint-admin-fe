@@ -1,1 +1,1 @@
-export * from "./useSessionUser";
+export * from "./UseSessionUser";

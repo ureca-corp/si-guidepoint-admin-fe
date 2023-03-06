@@ -1,17 +1,15 @@
 import { PopupMenuLogoutButton } from "@/apps/auth/logout";
-import {
-  useMemberEmail,
-  useMemberProfileImage,
-} from "@/apps/member/application/hooks";
-import { AvatarWithEmail } from "@/apps/member/ui/components";
+import { useUserEmail, useUserProfileImage } from "@/apps/user";
+
+import { AvatarWithEmail } from "@/apps/user/ui/components";
 import { PopupMenu, PopupMenuItemButton } from "@/common/components/popup-menu";
 import { css } from "@emotion/react";
 import { Avatar, IconButton } from "@mui/material";
 import { useState } from "react";
 
 export const AppbarProfileAvatar = () => {
-  const { email } = useMemberEmail();
-  const { profileImageUrl } = useMemberProfileImage();
+  const { email } = useUserEmail();
+  const { profileImageUrl } = useUserProfileImage();
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);

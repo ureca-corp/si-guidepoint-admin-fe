@@ -1,4 +1,4 @@
-import { ResetPasswordView } from "@/apps/admin";
+import { ResetPasswordView } from "@/apps/user";
 
 export default function Page() {
   return <ResetPasswordView />;

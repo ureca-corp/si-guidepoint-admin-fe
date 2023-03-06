@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import { useLoginView } from "./useLoginView";
+import { useLoginView } from "./UseLoginView";
 
 export const LoginView = () => {
   const {

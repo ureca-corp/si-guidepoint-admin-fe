@@ -17,15 +17,18 @@ import {
 
 import { useCustomMediaQuery } from "@/common/theme/screen";
 import { css } from "@emotion/react";
+import { PaginationProps } from "@mui/material";
 
 type ListViewCustomTableProps = {
   headerModels: CustomTableHeaderModel[];
   itemModels: CustomTableRowModel[];
+  pagenationProps?: PaginationProps;
 };
 
 export const ListViewCustomTable = ({
   headerModels,
   itemModels,
+  pagenationProps,
 }: ListViewCustomTableProps) => {
   const { isLarge } = useCustomMediaQuery();
 
@@ -33,7 +36,7 @@ export const ListViewCustomTable = ({
     return (
       <div css={st.accordionContainer}>
         <CustomAccordions models={convertToAccordionModels(itemModels)} />
-        <CustomTablePagination />
+        <CustomTablePagination {...pagenationProps} />
       </div>
     );
   }
@@ -52,7 +55,7 @@ export const ListViewCustomTable = ({
           </CustomTableRow>
         ))}
       />
-      <CustomTablePagination />
+      <CustomTablePagination {...pagenationProps} />
     </CustomTableContainer>
   );
 };

@@ -1,2 +1,2 @@
 export * from "./LoginView";
-export * from "./useLoginView";
+export * from "./UseLoginView";

@@ -8,6 +8,9 @@ const nextConfig = {
       labelFormat: "[dirname]-[filename]-[local]",
     },
   },
+  env: {
+    gqlServer: "https://guidepoint-api.ureca.im/graphql",
+  },
   // images: {
   //   unoptimized: true,
   // },

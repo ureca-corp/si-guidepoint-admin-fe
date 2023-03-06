@@ -3,6 +3,8 @@ import { recoilPersist } from "recoil-persist";
 import { SessionKey } from "../../common";
 
 type User = {
+  userId: number;
+  email: string;
   accessToken: string;
 };
 
@@ -16,7 +18,7 @@ const { persistAtom } = recoilPersist({
 
 const userAtom = atom<User>({
   key: SessionKey.User,
-  default: { accessToken: "" },
+  default: { userId: 0, email: "", accessToken: "" },
   effects_UNSTABLE: [persistAtom],
 });
 

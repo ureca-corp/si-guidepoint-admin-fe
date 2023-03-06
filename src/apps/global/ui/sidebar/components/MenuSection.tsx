@@ -1,7 +1,8 @@
-import { useGlobalSidebarSelectedMenuId } from "@/apps/global/application/hooks";
+import { useGlobalSidebarSelectedMenu } from "@/apps/global/application/hooks";
 import { SidebarMenuEntity } from "@/apps/global/domain";
 import { css } from "@emotion/react";
 import { CalendarMonthRounded } from "@mui/icons-material";
+import Link from "next/link";
 import { SidebarMenuCategory } from "./MenuCategory";
 import { SidebarMenuItem } from "./MenuItem";
 
@@ -10,24 +11,25 @@ type SidebarMenuSectionProps = {
 };
 
 export const SidebarMenuSection = ({ entity }: SidebarMenuSectionProps) => {
-  const { selectedMenuId, onChange } = useGlobalSidebarSelectedMenuId();
+  const { selectedMenuId, onChange } = useGlobalSidebarSelectedMenu();
 
   return (
     <div css={st.root}>
       <SidebarMenuCategory>{entity.category}</SidebarMenuCategory>
       {entity.items.map((it) => {
         const isSelected = it.id === selectedMenuId;
-        const onClick = () => onChange(it.id);
+        const onClick = () => onChange(it);
 
         return (
-          <SidebarMenuItem
-            key={it.id}
-            leftIcon={<CalendarMonthRounded />}
-            title={it.name}
-            depth={it.depth}
-            isSelected={isSelected}
-            onClick={onClick}
-          />
+          <Link key={it.id} href={it.link}>
+            <SidebarMenuItem
+              leftIcon={<CalendarMonthRounded />}
+              title={it.name}
+              depth={it.depth}
+              isSelected={isSelected}
+              onClick={onClick}
+            />
+          </Link>
         );
       })}
     </div>

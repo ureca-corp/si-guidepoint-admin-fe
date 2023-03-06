@@ -4,8 +4,11 @@ export enum RouterPath {
   // auth
   Login = "/login",
 
-  // admin
-  ResetPassword = "/admin/reset-password",
+  // user
+  ResetPassword = "/user/reset-password",
+
+  // terms
+  Terms = "/terms",
 }
 
 export const PublicRoutes = [RouterPath.Login, RouterPath.ResetPassword];

@@ -1,4 +1,3 @@
-import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
 import { Avatar, Typography } from "@mui/material";
 
