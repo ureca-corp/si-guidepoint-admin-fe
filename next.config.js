@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   compiler: {
     emotion: {
       sourceMap: true,
@@ -7,10 +8,10 @@ const nextConfig = {
       labelFormat: "[dirname]-[filename]-[local]",
     },
   },
-  images: {
-    unoptimized: true,
-  },
-  assetPrefix: ".",
+  // images: {
+  //   unoptimized: true,
+  // },
+  // assetPrefix: ".",
 };
 
 module.exports = nextConfig;

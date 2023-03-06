@@ -1,0 +1,10 @@
+# 연결할 Gql 서버
+schema: "https://guidepoint-api.ureca.im/graphql"
+
+documents: "src/**/*.tsx"
+ignoreNoDocuments: true,
+
+# Gql to TS 모델 저장 Path
+generates:
+  "./src/gql/":
+    preset: "client"

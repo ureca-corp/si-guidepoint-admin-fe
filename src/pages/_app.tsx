@@ -7,6 +7,9 @@ import { ThemeProvider } from "@mui/material";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { RecoilRoot } from "recoil";
+import { ApolloProvider } from "@apollo/client";
+import { gqlClient } from "@/apps/global/infra/gql";
+import { PrivateRoute } from "@/apps/auth/session";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -15,15 +18,19 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <RecoilRoot>
-      <ThemeProvider theme={findTheme(ThemeTypes.Light)}>
-        {isPublicPath ? (
-          <Component {...pageProps} />
-        ) : (
-          <Layout>
+      <ApolloProvider client={gqlClient}>
+        <ThemeProvider theme={findTheme(ThemeTypes.Light)}>
+          {isPublicPath ? (
             <Component {...pageProps} />
-          </Layout>
-        )}
-      </ThemeProvider>
+          ) : (
+            <PrivateRoute>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </PrivateRoute>
+          )}
+        </ThemeProvider>
+      </ApolloProvider>
     </RecoilRoot>
   );
 }
