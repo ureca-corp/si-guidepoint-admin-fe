@@ -1,0 +1,54 @@
+name: ureca admin CI
+
+on:
+  push:
+    paths-ignore:
+    - 'README.md'
+    branches: 
+      - 'main'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+    branches:
+      - 'main'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+    
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+      
+    - name: Start Build Action
+      run: yarn install --immutable --immutable-cache --check-cache
+      
+    - name: Export Static Files
+      run: yarn export
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-2
+      
+    - name: S3 Upload & CloudFront Invalidation
+      uses: reggionick/s3-deploy@v3
+      with:
+        folder: out
+        bucket: ${{ secrets.AWS_BUCKET }}
+        bucket-region: ap-northeast-2
+        dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+        invalidation: /*
+        no-cache: true
+        private: true
