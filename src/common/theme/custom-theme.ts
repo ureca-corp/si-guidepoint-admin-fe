@@ -30,6 +30,9 @@ export const lightTheme = createTheme({
       },
     },
     MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
       styleOverrides: {
         root: {
           textTransform: "none",
@@ -80,7 +83,7 @@ export const lightTheme = createTheme({
           },
 
           "&:hover": {
-            ".MuiOutlinedInput-notchedOutline": {
+            "&:not(.Mui-disabled).MuiOutlinedInput-notchedOutline": {
               borderColor: `${LightColor.PrimaryColor3} !important`,
             },
           },

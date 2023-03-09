@@ -1,7 +1,7 @@
-import { Terms, TermsParams } from "@/gql/graphql";
+import { QueryTermsArgs, Terms } from "@/gql/graphql";
 import { gql, useQuery } from "@apollo/client";
 
-type QueryResponse = {
+type Response = {
   terms: Terms;
 };
 
@@ -24,8 +24,8 @@ const FETCH_TERMS = gql`
   }
 `;
 
-export const useTerms = (params: TermsParams) => {
-  return useQuery<QueryResponse>(FETCH_TERMS, {
-    variables: { params },
+export const useTerms = (args: QueryTermsArgs) => {
+  return useQuery<Response>(FETCH_TERMS, {
+    variables: args,
   });
 };

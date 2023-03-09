@@ -1,38 +1,20 @@
 import { RouterPath } from "@/apps/global/router";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useSessionUser } from "../../session";
 import { useRequestLogin } from "../infra";
-
-const useLoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [pw, setPw] = useState("");
-
-  const handleEmailChange = (value: string) => {
-    setEmail(value);
-  };
-
-  const handlePwChange = (value: string) => {
-    setPw(value);
-  };
-
-  const isValidForm = !!email && !!pw;
-
-  return {
-    email,
-    handleEmailChange,
-    pw,
-    handlePwChange,
-    isValidForm,
-  };
-};
+import { useLoginForm } from "./UseLoginForm";
 
 export const useLoginView = () => {
   const { email, handleEmailChange, pw, handlePwChange, isValidForm } =
     useLoginForm();
 
+  // =================================================================
+
   const router = useRouter();
   const routeHome = () => router.replace(RouterPath.Home);
+
+  // =================================================================
 
   const { setUser } = useSessionUser();
 
