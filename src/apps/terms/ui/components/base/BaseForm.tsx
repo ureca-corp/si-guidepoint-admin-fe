@@ -12,55 +12,57 @@ type TermBaseFormProps = {
   defaultData?: TermBaseFormModel;
 };
 
-export const TermBaseForm = React.memo(
-  ({ onCancel, onSubmit, defaultData }: TermBaseFormProps) => {
-    const {
-      title,
-      handleTitleChange,
-      content,
-      handleContentChange,
-      isValidForm,
-      result,
-    } = useTermBaseForm(defaultData);
+const _TermBaseForm = ({
+  onCancel,
+  onSubmit,
+  defaultData,
+}: TermBaseFormProps) => {
+  const {
+    title,
+    handleTitleChange,
+    content,
+    handleContentChange,
+    isValidForm,
+    result,
+  } = useTermBaseForm(defaultData);
 
-    return (
-      <div css={st.root}>
-        <div css={st.container}>
-          <Typography css={st.title}>{"제목"}</Typography>
-          <TextField
-            fullWidth
-            value={title}
-            onChange={(e) => handleTitleChange(e.target.value)}
-          />
-        </div>
-
-        <div css={st.container}>
-          <Typography css={st.title}>{"내용"}</Typography>
-          <TextField
-            fullWidth
-            multiline
-            rows={8}
-            value={content}
-            onChange={(e) => handleContentChange(e.target.value)}
-          />
-        </div>
-
-        <div css={st.buttonContainer}>
-          <NagativeButton variant={"outlined"} onClick={onCancel}>
-            {"취소"}
-          </NagativeButton>
-          <Button
-            variant={"contained"}
-            disabled={!isValidForm}
-            onClick={() => onSubmit && onSubmit(result)}
-          >
-            {"확인"}
-          </Button>
-        </div>
+  return (
+    <div css={st.root}>
+      <div css={st.container}>
+        <Typography css={st.title}>{"제목"}</Typography>
+        <TextField
+          fullWidth
+          value={title}
+          onChange={(e) => handleTitleChange(e.target.value)}
+        />
       </div>
-    );
-  }
-);
+
+      <div css={st.container}>
+        <Typography css={st.title}>{"내용"}</Typography>
+        <TextField
+          fullWidth
+          multiline
+          rows={8}
+          value={content}
+          onChange={(e) => handleContentChange(e.target.value)}
+        />
+      </div>
+
+      <div css={st.buttonContainer}>
+        <NagativeButton variant={"outlined"} onClick={onCancel}>
+          {"취소"}
+        </NagativeButton>
+        <Button
+          variant={"contained"}
+          disabled={!isValidForm}
+          onClick={() => onSubmit && onSubmit(result)}
+        >
+          {"확인"}
+        </Button>
+      </div>
+    </div>
+  );
+};
 
 const st = {
   root: css`
@@ -94,3 +96,7 @@ const st = {
     gap: 8px;
   `,
 };
+
+const TermBaseForm = React.memo(_TermBaseForm);
+
+export { TermBaseForm };
