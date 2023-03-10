@@ -1,16 +1,11 @@
 import { RouterPath } from "@/apps/global/router";
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
-import { useTerm } from "@/apps/terms/infra";
 import { SquareIconButton } from "@/common/components/icon-buttons";
+import { css } from "@emotion/react";
 import { EditRounded } from "@mui/icons-material";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useMemo } from "react";
-import {
-  TermBaseForm,
-  TermBaseFormContainerCard,
-  TermBaseFormModel,
-} from "../../components";
+import { TermBaseForm, TermBaseFormContainerCard } from "../../components";
+import { TermDeleteDialogWithIconButton } from "../delete";
 import { useTermDetailView } from "./UseTermDetailView";
 
 export const TermDetailView = () => {
@@ -21,7 +16,7 @@ export const TermDetailView = () => {
       mainTitle={"이용약관"}
       subTitle={"상세보기"}
       subTitleRight={
-        <div>
+        <div css={st.menuIconsContainer}>
           <Link
             href={{
               pathname: RouterPath.TermUpdate,
@@ -32,6 +27,8 @@ export const TermDetailView = () => {
               <EditRounded />
             </SquareIconButton>
           </Link>
+
+          <TermDeleteDialogWithIconButton termId={termId} />
         </div>
       }
     >
@@ -40,4 +37,12 @@ export const TermDetailView = () => {
       </TermBaseFormContainerCard>
     </ListLayoutTemplate>
   );
+};
+
+const st = {
+  menuIconsContainer: css`
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  `,
 };

@@ -1,5 +1,5 @@
-import { SidebarMenuEntity, SidebarMenuItemEntity } from "../../domain";
-import { RouterPath } from "../../router";
+import { SidebarMenuEntity, SidebarMenuItemEntity } from "../../../domain";
+import { RouterPath } from "../../../router";
 
 export const useGlobalSidebarMenu = () => {
   const menuList: SidebarMenuEntity[] = [

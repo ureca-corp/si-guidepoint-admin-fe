@@ -14,7 +14,7 @@ const UPDATE_TERM = gql`
       id
       isRequired
       title
-      updatedAt
+      createdAt
     }
   }
 `;

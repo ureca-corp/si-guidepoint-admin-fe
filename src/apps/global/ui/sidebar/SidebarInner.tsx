@@ -1,5 +1,5 @@
 import { LightColor } from "@/common/theme/colors";
-import { useGlobalSidebarMenu } from "../../application/hooks";
+import { useGlobalSidebarMenu } from "../../application/hooks/sidebar";
 import { SidebarMenuSection } from "./components";
 import { css } from "@emotion/react";
 

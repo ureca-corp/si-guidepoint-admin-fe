@@ -1,4 +1,4 @@
-import { useGlobalSidebarSelectedMenu } from "@/apps/global/application/hooks";
+import { useGlobalSidebarSelectedMenu } from "@/apps/global/application/hooks/sidebar";
 import { SidebarMenuEntity } from "@/apps/global/domain";
 import { css } from "@emotion/react";
 import { CalendarMonthRounded } from "@mui/icons-material";

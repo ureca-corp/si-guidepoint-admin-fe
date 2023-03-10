@@ -1,6 +1,6 @@
 import { useCustomMediaQuery } from "@/common/theme/screen";
 import { Collapse, Drawer } from "@mui/material";
-import { useGlobalSidebarOpen } from "../../application/hooks";
+import { useGlobalSidebarOpen } from "../../application/hooks/sidebar";
 import { SidebarInner } from "./SidebarInner";
 
 export const Sidebar = () => {

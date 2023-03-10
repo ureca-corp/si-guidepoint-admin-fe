@@ -1,6 +1,6 @@
 import { SearchRounded } from "@mui/icons-material";
 import { useState } from "react";
-import { SquareIconButton } from "../../icon-buttons";
+import { SquareIconButton } from "../../../icon-buttons";
 import { SearchOptionsDialogResult } from "./hooks";
 import { SearchOptionsDialog } from "./SearchOptionsDialog";
 

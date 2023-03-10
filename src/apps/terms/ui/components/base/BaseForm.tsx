@@ -1,4 +1,4 @@
-import { NagativeOutlinedButton } from "@/common/components/buttons";
+import { NagativeButton } from "@/common/components/buttons";
 import { css } from "@emotion/react";
 import { Button, TextField, Typography } from "@mui/material";
 import { TermBaseFormModel } from "./models";
@@ -46,9 +46,9 @@ export const TermBaseForm = React.memo(
         </div>
 
         <div css={st.buttonContainer}>
-          <NagativeOutlinedButton onClick={onCancel}>
+          <NagativeButton variant={"outlined"} onClick={onCancel}>
             {"취소"}
-          </NagativeOutlinedButton>
+          </NagativeButton>
           <Button
             variant={"contained"}
             disabled={!isValidForm}

@@ -2,7 +2,7 @@ import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
 import {
   SearchOptionsDialogResult,
   SearchOptionsIconButton,
-} from "@/common/components/dialogs/search-options";
+} from "@/common/components/dialogs/variants/search-options";
 import { SquareIconButton } from "@/common/components/icon-buttons";
 import { css } from "@emotion/react";
 import { AddRounded } from "@mui/icons-material";

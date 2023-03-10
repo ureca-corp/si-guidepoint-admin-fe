@@ -1,5 +1,5 @@
 import { atom, useRecoilState } from "recoil";
-import { SidebarMenuItemEntity } from "../../domain";
+import { SidebarMenuItemEntity } from "../../../domain";
 
 const globalSidebarSelectedMenuIdState = atom({
   key: "globalSidebarSelectedMenuIdState",
