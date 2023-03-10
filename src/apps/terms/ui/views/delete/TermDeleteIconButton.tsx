@@ -1,7 +1,7 @@
-import { useDialog } from "@/apps/global/application/hooks";
 import { useTermRemove } from "@/apps/terms/infra";
 import { ConfirmDialogTemplate } from "@/common/components/dialogs";
 import { SquareIconButton } from "@/common/components/icon-buttons";
+import { useDialog } from "@/common/hooks";
 import { ApolloError } from "@apollo/client";
 import { css } from "@emotion/react";
 import { DeleteForeverRounded } from "@mui/icons-material";
