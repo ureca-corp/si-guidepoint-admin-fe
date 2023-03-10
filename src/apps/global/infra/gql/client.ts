@@ -13,6 +13,8 @@ const httpLink = new HttpLink({ uri: process.env.gqlServer });
 
 const authLink = setContext(() => {
   const userJson: any = sessionStorage.getItem(SessionKey.User);
+  if (!userJson) return {};
+
   const user = JSON.parse(userJson);
   const accessToken = user.user.accessToken;
 

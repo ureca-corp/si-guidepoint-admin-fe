@@ -11,6 +11,7 @@ export enum RouterPath {
   Terms = "/terms",
   Term = "/terms/detail",
   TermCreate = "/terms/create",
+  TermUpdate = "/terms/update",
 }
 
 export const PublicRoutes = [RouterPath.Login, RouterPath.ResetPassword];

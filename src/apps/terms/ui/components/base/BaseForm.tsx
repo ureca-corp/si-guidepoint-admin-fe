@@ -10,16 +10,10 @@ type TermBaseFormProps = {
   onCancel?: () => void;
   onSubmit?: (r: TermBaseFormModel) => void;
   defaultData?: TermBaseFormModel;
-  readonly?: boolean;
 };
 
 export const TermBaseForm = React.memo(
-  ({
-    onCancel,
-    onSubmit,
-    defaultData,
-    readonly = false,
-  }: TermBaseFormProps) => {
+  ({ onCancel, onSubmit, defaultData }: TermBaseFormProps) => {
     const {
       title,
       handleTitleChange,
@@ -36,7 +30,6 @@ export const TermBaseForm = React.memo(
           <TextField
             fullWidth
             value={title}
-            disabled={readonly}
             onChange={(e) => handleTitleChange(e.target.value)}
           />
         </div>
@@ -48,25 +41,22 @@ export const TermBaseForm = React.memo(
             multiline
             rows={8}
             value={content}
-            disabled={readonly}
             onChange={(e) => handleContentChange(e.target.value)}
           />
         </div>
 
-        {!readonly && (
-          <div css={st.buttonContainer}>
-            <NagativeOutlinedButton onClick={onCancel}>
-              {"취소"}
-            </NagativeOutlinedButton>
-            <Button
-              variant={"contained"}
-              disabled={!isValidForm}
-              onClick={() => onSubmit && onSubmit(result)}
-            >
-              {"확인"}
-            </Button>
-          </div>
-        )}
+        <div css={st.buttonContainer}>
+          <NagativeOutlinedButton onClick={onCancel}>
+            {"취소"}
+          </NagativeOutlinedButton>
+          <Button
+            variant={"contained"}
+            disabled={!isValidForm}
+            onClick={() => onSubmit && onSubmit(result)}
+          >
+            {"확인"}
+          </Button>
+        </div>
       </div>
     );
   }
