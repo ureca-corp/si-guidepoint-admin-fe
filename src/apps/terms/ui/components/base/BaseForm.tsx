@@ -83,6 +83,8 @@ const st = {
   `,
   title: css`
     white-space: nowrap;
+    font-weight: 600;
+
     min-width: 160px;
   `,
   buttonContainer: css`

@@ -18,7 +18,9 @@ export const CustomTableRowItem = ({ model }: CustomTableRowItemProps) => {
         `,
       ]}
     >
-      <Typography variant={"subtitle2"}>{model.value}</Typography>
+      <Typography variant={"subtitle2"} css={st.text}>
+        {model.value}
+      </Typography>
     </div>
   );
 };
@@ -28,5 +30,10 @@ const st = {
     display: flex;
 
     padding: 12px 16px;
+  `,
+  text: css`
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   `,
 };

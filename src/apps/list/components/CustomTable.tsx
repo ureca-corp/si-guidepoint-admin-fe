@@ -17,27 +17,40 @@ import {
 
 import { useCustomMediaQuery } from "@/common/theme/screen";
 import { css } from "@emotion/react";
-import { PaginationProps } from "@mui/material";
+import { OpenInNewRounded } from "@mui/icons-material";
+import { Button, PaginationProps, Typography } from "@mui/material";
 
 type ListViewCustomTableProps = {
   headerModels: CustomTableHeaderModel[];
   itemModels: CustomTableRowModel[];
   pagenationProps?: PaginationProps;
-  onItemClick?: (itemId: number) => void;
+  onItemDetail?: (itemId: number) => void;
 };
 
 export const ListViewCustomTable = ({
   headerModels,
   itemModels,
   pagenationProps,
-  onItemClick,
+  onItemDetail,
 }: ListViewCustomTableProps) => {
   const { isLarge } = useCustomMediaQuery();
 
   if (isLarge) {
     return (
       <div css={st.accordionContainer}>
-        <CustomAccordions models={convertToAccordionModels(itemModels)} />
+        <CustomAccordions
+          models={convertToAccordionModels(itemModels)}
+          itemBottomActions={(id: number) => (
+            <div css={st.accordionItemBottomContainer}>
+              <Button
+                endIcon={<OpenInNewRounded css={st.accordionDetailLinkIcon} />}
+                onClick={() => onItemDetail && onItemDetail(id)}
+              >
+                <Typography variant={"caption"}>{"상세보기"}</Typography>
+              </Button>
+            </div>
+          )}
+        />
         <CustomTablePagination {...pagenationProps} />
       </div>
     );
@@ -52,7 +65,7 @@ export const ListViewCustomTable = ({
         rows={itemModels.map((it) => (
           <CustomTableRow
             key={it.id}
-            onClick={() => onItemClick && onItemClick(it.id)}
+            onClick={() => onItemDetail && onItemDetail(it.id)}
           >
             {it.columns.map((model, index) => (
               <CustomTableRowItem key={`${it.id}-${index}`} model={model} />
@@ -72,6 +85,14 @@ const st = {
     height: 100%;
 
     overflow: hidden;
+  `,
+  accordionItemBottomContainer: css`
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0.8;
+  `,
+  accordionDetailLinkIcon: css`
+    width: 16px;
   `,
 };
 

@@ -7,14 +7,18 @@ import {
   AccordionSummary,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { CustomAccordionModel } from "./models";
 
 type CustomAccordionsProps = {
   models: CustomAccordionModel[];
+  itemBottomActions?: (id: number) => ReactNode;
 };
 
-export const CustomAccordions = ({ models }: CustomAccordionsProps) => {
+export const CustomAccordions = ({
+  models,
+  itemBottomActions,
+}: CustomAccordionsProps) => {
   const [expanded, setExpanded] = useState("");
 
   const handleChange =
@@ -25,6 +29,7 @@ export const CustomAccordions = ({ models }: CustomAccordionsProps) => {
   return (
     <div css={st.root}>
       {models.map((it) => {
+        console.log(it);
         return (
           <Accordion
             key={it.titleFirst}
@@ -51,6 +56,8 @@ export const CustomAccordions = ({ models }: CustomAccordionsProps) => {
                   <Typography variant={"body2"}>{item.value}</Typography>
                 </div>
               ))}
+
+              {itemBottomActions && itemBottomActions(+it.items[0].value)}
             </AccordionDetails>
           </Accordion>
         );

@@ -27,6 +27,7 @@ export const TermsView = () => {
   const { data } = useTerms({
     params: { pageRequest: { page, size: PageSize } },
   });
+
   const { headerModels, itemModels } = useTermsTableModels(
     data?.terms.items ?? []
   );
@@ -53,7 +54,7 @@ export const TermsView = () => {
           count: totalCount,
           onChange: (_, page) => handlePageChange(page),
         }}
-        onItemClick={handleItemClick}
+        onItemDetail={handleItemClick}
       />
     </ListLayoutTemplate>
   );

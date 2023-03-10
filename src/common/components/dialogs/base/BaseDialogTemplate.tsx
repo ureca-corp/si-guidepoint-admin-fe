@@ -1,4 +1,4 @@
-import { LightColor } from "@/common/theme";
+import { LightColor, Mq } from "@/common/theme";
 import { CloseRounded } from "@mui/icons-material";
 import { css, Dialog, IconButton } from "@mui/material";
 import { ReactNode } from "react";
@@ -65,6 +65,10 @@ const st = {
     min-width: 320px;
 
     padding: 12px 24px 12px 20px;
+
+    @media ${Mq.xs} {
+      min-width: unset;
+    }
   `,
   appbarBorderBottom: css`
     border-bottom: 1px dashed ${LightColor.BorderColor2};

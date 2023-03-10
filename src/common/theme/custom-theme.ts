@@ -82,8 +82,14 @@ export const lightTheme = createTheme({
             transition: "border-color 0.3s ease-in-out",
           },
 
+          "& .Mui-focused": {
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: `${LightColor.PrimaryColor3} !important`,
+            },
+          },
+
           "&:hover": {
-            "&:not(.Mui-disabled).MuiOutlinedInput-notchedOutline": {
+            "& .MuiOutlinedInput-notchedOutline": {
               borderColor: `${LightColor.PrimaryColor3} !important`,
             },
           },

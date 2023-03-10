@@ -21,10 +21,12 @@ export const ListLayoutTemplate = ({
 }: ListLayoutTemplateProps) => {
   return (
     <div css={st.root}>
-      <LayoutMainTitleSection title={mainTitle} />
-      <LayoutSubTitleSection subTitle={subTitle} right={subTitleRight} />
+      <div css={st.content}>
+        <LayoutMainTitleSection title={mainTitle} />
+        <LayoutSubTitleSection subTitle={subTitle} right={subTitleRight} />
 
-      {children}
+        {children}
+      </div>
     </div>
   );
 };
@@ -32,9 +34,17 @@ export const ListLayoutTemplate = ({
 const st = {
   root: css`
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
+
+    overflow: auto;
+  `,
+
+  content: css`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
 
     ${LayoutTemplateStyle.rootPadding};
   `,
