@@ -1,15 +1,9 @@
-import { GqlErrors } from "@/apps/global/infra/gql";
-import { RouterPath } from "@/apps/global/router";
 import { BaseFormContainerCard } from "@/apps/global/ui/base";
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
-import { useUserPasswordUpdate } from "@/apps/user/infra";
 import { PasswordTextField } from "@/common/components/text-fields";
-import { ApolloError } from "@apollo/client";
 import { css } from "@emotion/react";
 import { Button } from "@mui/material";
-import { useRouter } from "next/router";
-import { usePasswordUpdateForm } from "./UsePasswordUpdateForm";
-import { usePasswordUpdateView } from "./UsePasswordUpdateView";
+import { usePasswordUpdateForm, usePasswordUpdateView } from "./hooks";
 
 export const PasswordUpdateView = () => {
   const {
