@@ -32,6 +32,7 @@
     "@graphql-codegen/client-preset": "^2.1.0",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.9",
+    "@svgr/webpack": "^6.5.1",
     "recoil-persist": "^4.2.0"
   }
 }

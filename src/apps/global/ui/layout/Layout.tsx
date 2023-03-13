@@ -39,5 +39,7 @@ const st = {
     flex-direction: column;
     flex: 1;
     height: 100%;
+
+    overflow: hidden;
   `,
 };

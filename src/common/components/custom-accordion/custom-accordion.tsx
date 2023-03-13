@@ -53,7 +53,9 @@ export const CustomAccordions = ({
                     <Typography variant={"subtitle2"}>{item.key}</Typography>
                   </div>
 
-                  <Typography variant={"body2"}>{item.value}</Typography>
+                  <Typography variant={"body2"} css={st.itemValue}>
+                    {item.value}
+                  </Typography>
                 </div>
               ))}
 
@@ -94,5 +96,9 @@ const st = {
   `,
   itemKey: css`
     min-width: 80px;
+  `,
+  itemValue: css`
+    white-space: pre-line;
+    word-break: break-all;
   `,
 };

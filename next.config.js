@@ -11,6 +11,14 @@ const nextConfig = {
   env: {
     gqlServer: "https://guidepoint-api.ureca.im/graphql",
   },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
+    });
+    return config;
+  },
   images: {
     unoptimized: true,
   },
