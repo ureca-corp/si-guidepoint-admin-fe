@@ -3,7 +3,7 @@ import { SidebarMenuItemEntity } from "../../../domain";
 
 const globalSidebarSelectedMenuIdState = atom({
   key: "globalSidebarSelectedMenuIdState",
-  default: 0,
+  default: 1,
 });
 
 export const useGlobalSidebarSelectedMenu = () => {

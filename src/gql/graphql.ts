@@ -370,6 +370,7 @@ export type Profile = {
   __typename?: 'Profile';
   assistantContactInfos?: Maybe<Array<AssistantContactInfo>>;
   contactInfo: ContactInfo;
+  createdAt: Scalars['String'];
   employmentHistory: EmploymentHistory;
   expertiseHistory: ExpertiseHistory;
   id: Scalars['Int'];
