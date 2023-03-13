@@ -1,8 +1,8 @@
 import { useGlobalSidebarSelectedMenu } from "@/apps/global/application/hooks/sidebar";
 import { SidebarMenuEntity } from "@/apps/global/domain";
 import { css } from "@emotion/react";
-import { CalendarMonthRounded } from "@mui/icons-material";
 import Link from "next/link";
+import { IconByLinkMenu } from "../../icons";
 import { SidebarMenuCategory } from "./MenuCategory";
 import { SidebarMenuItem } from "./MenuItem";
 
@@ -23,7 +23,7 @@ export const SidebarMenuSection = ({ entity }: SidebarMenuSectionProps) => {
         return (
           <Link key={it.id} href={it.link}>
             <SidebarMenuItem
-              leftIcon={<CalendarMonthRounded />}
+              leftIcon={<IconByLinkMenu link={it.link} />}
               title={it.name}
               depth={it.depth}
               isSelected={isSelected}

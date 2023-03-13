@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { css } from "@emotion/react";
-import { Button, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
+import { LightColor } from "@/common/theme";
 
 type SidebarMenuItemProps = {
   leftIcon: ReactNode;
@@ -19,16 +20,16 @@ export const SidebarMenuItem = ({
 }: SidebarMenuItemProps) => {
   return (
     <Button fullWidth size={"large"} css={st.button} onClick={onClick}>
-      <div css={[st.root, st.depthPadding(depth)]}>
-        {leftIcon}
-        <Typography
-          variant={"body1"}
-          fontWeight={500}
-          color={isSelected ? "primary" : ""}
-        >
+      <Stack
+        css={st.root(depth)}
+        color={isSelected ? "primary" : LightColor.TextColor1}
+      >
+        <div css={st.leftIconWrapper}>{leftIcon}</div>
+
+        <Typography variant={"body1"} fontWeight={500} color={"inherit"}>
           {title}
         </Typography>
-      </div>
+      </Stack>
     </Button>
   );
 };
@@ -37,12 +38,16 @@ const st = {
   button: css`
     justify-content: start;
   `,
-  root: css`
+  root: (depth: number) => css`
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 8px;
-  `,
-  depthPadding: (depth: number) => css`
+
     padding: 0 ${depth * 12}px;
+  `,
+  leftIconWrapper: css`
+    display: flex;
+    opacity: 0.8;
   `,
 };

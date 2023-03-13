@@ -13,7 +13,6 @@ export class SidebarMenuItemEntity {
     public id: number,
     public name: string,
     public link: RouterPath,
-    public iconName: string,
-    public depth: number,
+    public depth: number
   ) {}
 }
