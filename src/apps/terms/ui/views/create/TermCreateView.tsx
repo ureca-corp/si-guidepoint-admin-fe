@@ -1,5 +1,6 @@
+import { BaseFormContainerCard } from "@/apps/global/ui/base";
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
-import { TermBaseForm, BaseFormContainerCard } from "../../components";
+import { TermBaseForm } from "../../components";
 import { useTermCreateView } from "./UseTermCreateView";
 
 export const TermCreateView = () => {
