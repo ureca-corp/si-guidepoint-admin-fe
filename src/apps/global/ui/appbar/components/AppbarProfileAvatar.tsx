@@ -1,10 +1,12 @@
 import { PopupMenuLogoutButton } from "@/apps/auth/logout";
+import { RouterPath } from "@/apps/global/router";
 import { useUserEmail, useUserProfileImage } from "@/apps/user";
 
 import { AvatarWithEmail } from "@/apps/user/ui/components";
 import { PopupMenu, PopupMenuItemButton } from "@/common/components/popup-menu";
 import { css } from "@emotion/react";
 import { Avatar, IconButton } from "@mui/material";
+import Link from "next/link";
 import { useState } from "react";
 
 export const AppbarProfileAvatar = () => {
@@ -35,7 +37,10 @@ export const AppbarProfileAvatar = () => {
         <div css={st.avatarWithEmailWrapper}>
           <AvatarWithEmail email={email} profileImageUrl={profileImageUrl} />
         </div>
-        <PopupMenuItemButton>{"비밀번호 변경"}</PopupMenuItemButton>
+
+        <Link href={RouterPath.UpdatePassword}>
+          <PopupMenuItemButton>{"비밀번호 변경"}</PopupMenuItemButton>
+        </Link>
         <PopupMenuLogoutButton />
       </PopupMenu>
     </div>

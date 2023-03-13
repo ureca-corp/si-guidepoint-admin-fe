@@ -1,5 +1,8 @@
 import { RouterPath } from "@/apps/global/router";
-import { EmailTextField } from "@/common/components/text-fields";
+import {
+  EmailTextField,
+  PasswordTextField,
+} from "@/common/components/text-fields";
 import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
 import { LockRounded } from "@mui/icons-material";
@@ -39,20 +42,10 @@ export const LoginView = () => {
           css={st.input}
         />
 
-        <TextField
-          type="password"
+        <PasswordTextField
           value={pw}
           onChange={(e) => handlePwChange(e.target.value)}
           css={st.input}
-          label="Password"
-          placeholder="* * * * * * * *"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockRounded />
-              </InputAdornment>
-            ),
-          }}
         />
         <Link href={RouterPath.ResetPassword}>
           <div css={st.forgotPassword}>

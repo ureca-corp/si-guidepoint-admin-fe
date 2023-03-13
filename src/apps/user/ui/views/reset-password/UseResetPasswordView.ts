@@ -2,7 +2,7 @@ import { RouterPath } from "@/apps/global/router";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export const useLoginView = () => {
+export const useResetPasswordView = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState("");

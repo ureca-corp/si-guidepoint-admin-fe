@@ -7,11 +7,9 @@ export const MemberDetailView = () => {
   const router = useRouter();
   const memberId = +(router.query.id ?? "");
 
-  console.log(memberId);
-
   return (
     <ListLayoutTemplate
-      mainTitle={"멤버"}
+      mainTitle={"회원"}
       subTitle={"상세보기"}
       subTitleRight={<MemberDeleteDialogWithIconButton memberId={memberId} />}
     >

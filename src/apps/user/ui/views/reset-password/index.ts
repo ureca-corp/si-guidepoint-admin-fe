@@ -1,2 +1,2 @@
 export * from "./ResetPasswordView";
-export * from "./useResetPasswordView";
+export * from "./UseResetPasswordView";

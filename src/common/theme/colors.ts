@@ -18,6 +18,8 @@ export enum LightColor {
   PrimaryColor2 = "#2951D7dd",
   PrimaryColor3 = "#2951D7bb",
 
+  DangerColor = "#d32f2f",
+
   BorderColor1 = "#e0e0e0",
   BorderColor2 = "#e0e0e099",
 

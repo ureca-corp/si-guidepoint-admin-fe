@@ -6,6 +6,7 @@ export enum RouterPath {
 
   // user
   ResetPassword = "/user/reset-password",
+  UpdatePassword = "/user/update-password",
 
   // terms
   Terms = "/terms",

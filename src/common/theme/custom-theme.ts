@@ -83,7 +83,7 @@ export const lightTheme = createTheme({
           },
 
           "& .Mui-focused": {
-            "& .MuiOutlinedInput-notchedOutline": {
+            ".MuiOutlinedInput-notchedOutline": {
               borderColor: `${LightColor.PrimaryColor3} !important`,
             },
           },
@@ -91,6 +91,12 @@ export const lightTheme = createTheme({
           "&:hover": {
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor: `${LightColor.PrimaryColor3} !important`,
+            },
+          },
+
+          "& .Mui-error": {
+            ".MuiOutlinedInput-notchedOutline": {
+              borderColor: `${LightColor.DangerColor} !important`,
             },
           },
         },

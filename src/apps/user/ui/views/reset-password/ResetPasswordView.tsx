@@ -2,10 +2,11 @@ import { EmailTextField } from "@/common/components/text-fields";
 import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
 import { Button, Card, Typography } from "@mui/material";
-import { useLoginView } from "./useResetPasswordView";
+import { useResetPasswordView } from ".";
 
 export const ResetPasswordView = () => {
-  const { email, handleEmailChange, isValidForm, onSubmit } = useLoginView();
+  const { email, handleEmailChange, isValidForm, onSubmit } =
+    useResetPasswordView();
 
   return (
     <div css={st.root}>
