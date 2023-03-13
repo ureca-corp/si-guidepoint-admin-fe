@@ -2,7 +2,7 @@ import { RouterPath } from "@/apps/global/router";
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
 import { ListViewCustomTable } from "@/apps/list";
 import { useProfiles } from "@/apps/member/infra";
-import { useProfilesTableModels } from "@/apps/member/infra/hooks/UseProfilesTable";
+import { useProfilesTableModels } from "@/apps/member/application/hooks/UseProfilesTable";
 import { usePagination } from "@/common/hooks";
 import { useRouter } from "next/router";
 
@@ -32,7 +32,10 @@ export const MembersView = () => {
   const totalCount = data?.profilesForAdmin.metaData.totalPageCount ?? 0;
 
   return (
-    <ListLayoutTemplate mainTitle={"회원 관리"} subTitle={"목록"}>
+    <ListLayoutTemplate
+      mainTitle={"회원 관리"}
+      subTitle={"프로필이 등록된 회원 목록"}
+    >
       <ListViewCustomTable
         headerModels={headerModels}
         itemModels={itemModels}

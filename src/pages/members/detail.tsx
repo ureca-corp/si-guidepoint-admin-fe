@@ -1,3 +1,5 @@
+import { MemberDetailView } from "@/apps/member";
+
 export default function Page() {
-  return <div>todo</div>;
+  return <MemberDetailView />;
 }

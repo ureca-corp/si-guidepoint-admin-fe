@@ -2,7 +2,7 @@ import { Mq } from "@/common/theme";
 import { css } from "@emotion/react";
 import Card, { CardProps } from "@mui/material/Card";
 
-export const TermBaseFormContainerCard = (p: CardProps) => {
+export const BaseFormContainerCard = (p: CardProps) => {
   return (
     <Card
       css={css`

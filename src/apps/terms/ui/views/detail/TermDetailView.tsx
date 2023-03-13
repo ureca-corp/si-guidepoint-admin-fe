@@ -1,12 +1,10 @@
 import { RouterPath } from "@/apps/global/router";
+import { BaseFormContainerCard } from "@/apps/global/ui/base";
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
 import { SquareIconButton } from "@/common/components/icon-buttons";
-import { LightColor, Mq } from "@/common/theme";
 import { css } from "@emotion/react";
 import { EditRounded } from "@mui/icons-material";
-import { Typography } from "@mui/material";
 import Link from "next/link";
-import { TermBaseFormContainerCard } from "../../components";
 import { TermDeleteDialogWithIconButton } from "../delete";
 import { TitleWithContent } from "./el";
 import { useTermDetailView } from "./UseTermDetailView";
@@ -36,7 +34,7 @@ export const TermDetailView = () => {
         </div>
       }
     >
-      <TermBaseFormContainerCard>
+      <BaseFormContainerCard>
         <div css={formStyle.root}>
           <TitleWithContent title={"번호"} content={`${termData.id}`} />
           <TitleWithContent title={"제목"} content={termData?.title ?? ""} />
@@ -54,7 +52,7 @@ export const TermDetailView = () => {
             content={termData.deletedAt ?? ""}
           />
         </div>
-      </TermBaseFormContainerCard>
+      </BaseFormContainerCard>
     </ListLayoutTemplate>
   );
 };

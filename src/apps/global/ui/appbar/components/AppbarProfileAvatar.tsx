@@ -35,7 +35,7 @@ export const AppbarProfileAvatar = () => {
         <div css={st.avatarWithEmailWrapper}>
           <AvatarWithEmail email={email} profileImageUrl={profileImageUrl} />
         </div>
-        <PopupMenuItemButton>{"계정 설정"}</PopupMenuItemButton>
+        <PopupMenuItemButton>{"비밀번호 변경"}</PopupMenuItemButton>
         <PopupMenuLogoutButton />
       </PopupMenu>
     </div>

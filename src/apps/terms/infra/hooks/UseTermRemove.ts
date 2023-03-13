@@ -1,8 +1,4 @@
-import {
-  MutationRemoveTermArgs,
-  MutationUpdateTermArgs,
-  Term,
-} from "@/gql/graphql";
+import { MutationRemoveTermArgs, Term } from "@/gql/graphql";
 import { gql, useMutation } from "@apollo/client";
 
 type Response = {
@@ -13,11 +9,11 @@ const REMOVE_TERM = gql`
   mutation RemoveTerm($id: Int!) {
     removeTerm(id: $id) {
       content
-      createdAt
-      deletedAt
       id
       isRequired
       title
+      createdAt
+      deletedAt
       updatedAt
     }
   }

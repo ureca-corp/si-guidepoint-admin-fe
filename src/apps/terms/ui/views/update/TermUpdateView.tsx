@@ -1,5 +1,5 @@
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
-import { TermBaseForm, TermBaseFormContainerCard } from "../../components";
+import { TermBaseForm, BaseFormContainerCard } from "../../components";
 import { useTermUpdateView } from "./UseTermUpdateView";
 
 export const TermUpdateView = () => {
@@ -10,13 +10,13 @@ export const TermUpdateView = () => {
       mainTitle={"이용약관 수정"}
       subTitle={"기존 이용약관을 수정합니다"}
     >
-      <TermBaseFormContainerCard>
+      <BaseFormContainerCard>
         <TermBaseForm
           defaultData={formDefaultData}
           onCancel={handleCancel}
           onSubmit={handleSubmit}
         />
-      </TermBaseFormContainerCard>
+      </BaseFormContainerCard>
     </ListLayoutTemplate>
   );
 };

@@ -188,8 +188,11 @@ export type LoginResponse = {
 
 export type Member = {
   __typename?: 'Member';
-  email?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
+  createdAt: Scalars['String'];
+  deletedAt?: Maybe<Scalars['String']>;
+  email: Scalars['String'];
+  id: Scalars['Int'];
+  updatedAt: Scalars['String'];
 };
 
 export type Misc = {
@@ -371,13 +374,16 @@ export type Profile = {
   assistantContactInfos?: Maybe<Array<AssistantContactInfo>>;
   contactInfo: ContactInfo;
   createdAt: Scalars['String'];
+  deletedAt?: Maybe<Scalars['String']>;
   employmentHistory: EmploymentHistory;
   expertiseHistory: ExpertiseHistory;
   id: Scalars['Int'];
+  memberId: Scalars['Int'];
   misc: Misc;
   participations?: Maybe<Array<Participation>>;
   personalInfo: PersonalInfo;
   residenceAddress: ResidenceAddress;
+  updatedAt: Scalars['String'];
 };
 
 export type ProfileParams = {

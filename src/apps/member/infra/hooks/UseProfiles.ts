@@ -10,6 +10,7 @@ const FETCH_PROFILES = gql`
     profilesForAdmin(params: $params) {
       items {
         id
+        memberId
         personalInfo {
           firstName
           middleInitial
@@ -28,6 +29,7 @@ const FETCH_PROFILES = gql`
           country
         }
         createdAt
+        deletedAt
       }
       metaData {
         totalPageCount
